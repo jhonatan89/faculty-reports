@@ -1,0 +1,20 @@
+
+<div class="container">
+	<h4>{{ 'FacultyEvaluationHistory' | translate }}</h4>
+	<form [formGroup]="formGroup" (ngSubmit)="saveModel(facultyEvaluationHistoryModel)">
+		<div class="form-group">
+			<mat-slide-toggle formControlName="showGroupingCtrl" [color]="primary" [(ngModel)]="facultyEvaluationHistoryModel.showGrouping" >ShowGrouping</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="showDetailCtrl" [color]="primary" [(ngModel)]="facultyEvaluationHistoryModel.showDetail" >ShowDetail</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<label for="form-visualOptions">VisualOptions</label>
+			<input type="text" class="form-control" [(ngModel)]="facultyEvaluationHistoryModel.visualOptions" id="form-visualOptions" name="visualOptions" placeholder="VisualOptions" formControlName="visualOptionsCtrl" >
+			</div>
+			<div class="form-buttons"> 
+				<button type="button" class="btn btn-default" (click)="cleanFields()" >{{'clean' | translate}}</button>
+				<button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">{{'apply' | translate}}</button>
+			</div>
+		</form>
+	</div>

@@ -1,0 +1,53 @@
+
+<div class="container">
+	<h4>{{ 'BasicFaculty' | translate }}</h4>
+	<form [formGroup]="formGroup" (ngSubmit)="saveModel(basicFacultyModel)">
+		<div class="form-group">
+			<mat-slide-toggle formControlName="userCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.user" >User</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="nameCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.name" >Name</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="documentNumberCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.documentNumber" >DocumentNumber</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="colcienciasCodeCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.colcienciasCode" >ColcienciasCode</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="dependencyCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.dependency" >Dependency</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="positionCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.position" >Position</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="categoryCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.category" >Category</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="researchGroupCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.researchGroup" >ResearchGroup</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="officeCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.office" >Office</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="extensionCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.extension" >Extension</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="webPageCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.webPage" >WebPage</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="maxAcademicLevelCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.maxAcademicLevel" >MaxAcademicLevel</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<mat-slide-toggle formControlName="dedicationPercentageCtrl" [color]="primary" [(ngModel)]="basicFacultyModel.dedicationPercentage" >DedicationPercentage</mat-slide-toggle>
+		</div>
+		<div class="form-group">
+			<label for="form-visualOptions">VisualOptions</label>
+			<input type="text" class="form-control" [(ngModel)]="basicFacultyModel.visualOptions" id="form-visualOptions" name="visualOptions" placeholder="VisualOptions" formControlName="visualOptionsCtrl" >
+			</div>
+			<div class="form-buttons"> 
+				<button type="button" class="btn btn-default" (click)="cleanFields()" >{{'clean' | translate}}</button>
+				<button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">{{'apply' | translate}}</button>
+			</div>
+		</form>
+	</div>

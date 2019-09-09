@@ -1,0 +1,33 @@
+
+<div class="container">
+	<h4>{{ 'ProductsConsolidated' | translate }}</h4>
+	<form [formGroup]="formGroup" (ngSubmit)="saveModel(productsConsolidatedModel)">
+		<div class="form-group">
+			<label for="form-initialYear">InitialYear</label>
+			<input type="text" class="form-control" [(ngModel)]="productsConsolidatedModel.initialYear" id="form-initialYear" name="initialYear" placeholder="InitialYear" formControlName="initialYearCtrl" >
+			</div>
+			<div class="form-group">
+				<label for="form-endYear">EndYear</label>
+				<input type="text" class="form-control" [(ngModel)]="productsConsolidatedModel.endYear" id="form-endYear" name="endYear" placeholder="EndYear" formControlName="endYearCtrl" >
+				</div>
+				<div class="form-group">
+					<label for="form-productType">ProductType</label>
+					<input type="text" class="form-control" [(ngModel)]="productsConsolidatedModel.productType" id="form-productType" name="productType" placeholder="ProductType" formControlName="productTypeCtrl" >
+					</div>
+					<div class="form-group">
+						<label for="form-formatByDefault">FormatByDefault</label>
+						<input type="text" class="form-control" [(ngModel)]="productsConsolidatedModel.formatByDefault" id="form-formatByDefault" name="formatByDefault" placeholder="FormatByDefault" formControlName="formatByDefaultCtrl" >
+						</div>
+						<div class="form-group">
+							<mat-slide-toggle formControlName="showDetailCtrl" [color]="primary" [(ngModel)]="productsConsolidatedModel.showDetail" >ShowDetail</mat-slide-toggle>
+						</div>
+						<div class="form-group">
+							<label for="form-visualOptions">VisualOptions</label>
+							<input type="text" class="form-control" [(ngModel)]="productsConsolidatedModel.visualOptions" id="form-visualOptions" name="visualOptions" placeholder="VisualOptions" formControlName="visualOptionsCtrl" >
+							</div>
+							<div class="form-buttons"> 
+								<button type="button" class="btn btn-default" (click)="cleanFields()" >{{'clean' | translate}}</button>
+								<button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">{{'apply' | translate}}</button>
+							</div>
+						</form>
+					</div>
